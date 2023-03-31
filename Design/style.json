@@ -1,0 +1,26 @@
+{
+	"QMainWindow":[
+		{
+			"tittle":"mehdi",
+			"icon":":/rsc/img/ambulance.png",
+			"frameless": true,
+			"transluscentBg": true,
+			"sizeGrip": "sizeGrip",
+			"navigation":[
+				{
+					"minimize":"MinimizeBtn",
+					"close": "CloseBtn",
+					"restore":[
+						{	
+							"buttonName": "RestoreBtn",
+							"normalIcon": ":/rsc/img/square.svg",
+							"maximizedIcon": ":/rsc/img/copy.svg"
+						}
+					],
+					"moveWindow": "HeaderContainer",
+					"tittleBar": "HeaderContainer"
+				}
+			]
+		}
+	]
+}
