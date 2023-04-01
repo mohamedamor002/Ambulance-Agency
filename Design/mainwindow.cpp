@@ -10,26 +10,15 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->SizeGrip->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
-
-void MainWindow::on_CloseBtn_clicked()
-{
-    close();
+    connect(ui->CloseBtn, &QPushButton::clicked, this, [this]() { close(); });
+    connect(ui->RestoreBtn, &QPushButton::clicked, this,
+            [this]() { isMaximized() ? showNormal() : showMaximized(); });
+    connect(ui->MinimizeBtn, &QPushButton::clicked, this,
+            [this]() { setWindowState(Qt::WindowState::WindowMinimized); });
 
 }
 
-void MainWindow::on_RestoreBtn_clicked()
+MainWindow::~MainWindow() 
 {
-isMaximized() ? showNormal() :showMaximized() ;
-}
-
-void MainWindow::on_MinimizeBtn_clicked()
-{
-    setWindowState(Qt::WindowState::WindowMinimized) ;
+  delete ui;
 }
