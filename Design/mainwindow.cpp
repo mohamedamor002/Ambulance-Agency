@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->SizeGrip->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-    connect(ui->CloseBtn, &QPushButton::clicked, this, [this]() { close(); });
+    connect(ui->CloseBtn, &QPushButton::clicked, this, &QPushButton::close);
     connect(ui->RestoreBtn, &QPushButton::clicked, this,
             [this]() { isMaximized() ? showNormal() : showMaximized(); });
     connect(ui->MinimizeBtn, &QPushButton::clicked, this,
