@@ -2,23 +2,51 @@
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
-    setWindowFlag(Qt::FramelessWindowHint);
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
+  ui->setupUi(this);
+  setWindowFlag(Qt::FramelessWindowHint);
 
-    ui->SizeGrip->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+  ui->SizeGrip->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-    connect(ui->CloseBtn, &QPushButton::clicked, this, &QPushButton::close);
-    connect(ui->RestoreBtn, &QPushButton::clicked, this,
-            [this]() { isMaximized() ? showNormal() : showMaximized(); });
-    connect(ui->MinimizeBtn, &QPushButton::clicked, this,
-            [this]() { setWindowState(Qt::WindowState::WindowMinimized); });
+  // Setup custom control buttons
 
+  connect(ui->CloseBtn, &QPushButton::clicked, this, &QPushButton::close);
+  connect(ui->RestoreBtn, &QPushButton::clicked, this,
+          [this]() { isMaximized() ? showNormal() : showMaximized(); });
+  connect(ui->MinimizeBtn, &QPushButton::clicked, this,
+          [this]() { setWindowState(Qt::WindowState::WindowMinimized); });
+
+  // Setup the button group
+
+  QFrame *tabsButtonsFrame = ui->LeftMenuSubContainer->findChild<QFrame *>(
+      "frame_2", Qt::FindDirectChildrenOnly);
+  QStackedWidget *wStacked = ui->stackedWidget_3;
+  QButtonGroup *buttonGroup = new QButtonGroup(this);
+
+  for (QPushButton *wBut : tabsButtonsFrame->findChildren<QPushButton *>(
+           QString(), Qt::FindDirectChildrenOnly)) {
+    wBut->setCheckable(true);
+    buttonGroup->addButton(wBut);
+  }
+
+  // Check the first button
+
+  tabsButtonsFrame
+      ->findChild<QPushButton *>("HomeBtn", Qt::FindDirectChildrenOnly)
+      ->setChecked(true);
+
+  // Connect button group to stacked widget
+
+  connect(buttonGroup,
+          QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this,
+          [=]() {
+            QString pageName =
+                buttonGroup->checkedButton()->objectName().replace("Btn",
+                                                                   "Page");
+            QWidget *wPage = wStacked->findChild<QWidget *>(
+                pageName, Qt::FindDirectChildrenOnly);
+            wStacked->setCurrentWidget(wPage);
+          });
 }
 
-MainWindow::~MainWindow() 
-{
-  delete ui;
-}
+MainWindow::~MainWindow() { delete ui; }

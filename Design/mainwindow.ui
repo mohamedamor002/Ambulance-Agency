@@ -30,10 +30,17 @@ color : #fff;
 background-color: #16191d
 }
 #LeftMenuSubContainer QPushButton 
-{ text-align:left ;
-padding:5px 10px ;
-border-top-left-radius: 10px ;
-border-bottom-left-radius: 10px ;
+{ 
+	text-align:left ;
+	padding:5px 10px ;
+	border-top-left-radius: 10px ;
+	border-bottom-left-radius: 10px ;
+}
+#LeftMenuSubContainer QPushButton::checked
+{
+	/* background-color: #16191d; */
+	background-color: rgb(31, 35, 42);
+
 }
 #CenterMenuSubContainer ,#RightMenuSubContainer{
 
@@ -177,9 +184,6 @@ background-color: #2c313c	;
                <property name="toolTip">
                 <string>Home</string>
                </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(31, 35, 42);</string>
-               </property>
                <property name="text">
                 <string>Home</string>
                </property>
@@ -216,7 +220,7 @@ background-color: #2c313c	;
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="ReportBtn">
+              <widget class="QPushButton" name="ReportsBtn">
                <property name="toolTip">
                 <string>View Reports</string>
                </property>
@@ -437,7 +441,7 @@ background-color: #2c313c	;
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>2</number>
+             <number>0</number>
             </property>
             <widget class="QWidget" name="page">
              <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -739,9 +743,9 @@ background-color: #2c313c	;
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
-                <number>2</number>
+                <number>1</number>
                </property>
-               <widget class="QWidget" name="page_6">
+               <widget class="QWidget" name="HomePage">
                 <layout class="QVBoxLayout" name="verticalLayout_16">
                  <item>
                   <widget class="QLabel" name="label_10">
@@ -762,7 +766,7 @@ background-color: #2c313c	;
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_7">
+               <widget class="QWidget" name="DataPage">
                 <layout class="QVBoxLayout" name="verticalLayout_17">
                  <item>
                   <widget class="QLabel" name="label_11">
@@ -783,7 +787,7 @@ background-color: #2c313c	;
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_8">
+               <widget class="QWidget" name="ReportsPage">
                 <layout class="QVBoxLayout" name="verticalLayout_18">
                  <item>
                   <widget class="QLabel" name="label_12">
