@@ -38,11 +38,9 @@ MainWindow::MainWindow(QWidget *parent)
   // Connect button group to stacked widget
 
   connect(buttonGroup,
-          QOverload<QAbstractButton *>::of(&QButtonGroup::buttonClicked), this,
-          [=]() {
-            QString pageName =
-                buttonGroup->checkedButton()->objectName().replace("Btn",
-                                                                   "Page");
+          qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), this,
+          [=](QAbstractButton *clicked) {
+            QString pageName = clicked->objectName().replace("Btn", "Page");
             QWidget *wPage = wStacked->findChild<QWidget *>(
                 pageName, Qt::FindDirectChildrenOnly);
             wStacked->setCurrentWidget(wPage);
