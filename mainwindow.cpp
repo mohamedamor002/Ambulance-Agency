@@ -11,11 +11,11 @@ MainWindow::MainWindow(QWidget *parent)
 
   // Setup custom control buttons
 
-  connect(ui->CloseBtn, &QPushButton::clicked, this, &QPushButton::close);
+  connect(ui->CloseBtn, &QPushButton::clicked, this, &QMainWindow::close);
   connect(ui->RestoreBtn, &QPushButton::clicked, this,
           [this]() { isMaximized() ? showNormal() : showMaximized(); });
   connect(ui->MinimizeBtn, &QPushButton::clicked, this,
-          [this]() { setWindowState(Qt::WindowState::WindowMinimized); });
+          &QMainWindow::showMinimized);
 
   // Setup the button group
 
