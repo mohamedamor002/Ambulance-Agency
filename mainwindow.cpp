@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QtGlobal>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -23,10 +24,13 @@ MainWindow::MainWindow(QWidget *parent)
   QStackedWidget *wStacked = ui->stackedWidget_3;
   QButtonGroup *buttonGroup = new QButtonGroup(this);
 
-  for (QPushButton *wBut : tabsButtonsFrame->findChildren<QPushButton *>(
-           QString(), Qt::FindDirectChildrenOnly)) {
-    wBut->setCheckable(true);
-    buttonGroup->addButton(wBut);
+  {
+    auto buttons = tabsButtonsFrame->findChildren<QPushButton *>(
+        QString(), Qt::FindDirectChildrenOnly);
+    for (QPushButton *wBut : qAsConst(buttons)) {
+      wBut->setCheckable(true);
+      buttonGroup->addButton(wBut);
+    }
   }
 
   // Check the first button
