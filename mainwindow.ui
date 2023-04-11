@@ -74,6 +74,15 @@ background-color: #2c313c	;
     </property>
     <item alignment="Qt::AlignLeft">
      <widget class="QWidget" name="LeftMenuContainer" native="true">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
         <number>0</number>
@@ -743,7 +752,7 @@ background-color: #2c313c	;
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
-                <number>1</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="HomePage">
                 <layout class="QVBoxLayout" name="verticalLayout_16">

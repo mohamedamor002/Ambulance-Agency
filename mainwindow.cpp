@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -27,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
            QString(), Qt::FindDirectChildrenOnly)) {
     wBut->setCheckable(true);
     buttonGroup->addButton(wBut);
+    ui->MenuBtn->setCheckable(true);
   }
 
   // Check the first button
@@ -50,3 +52,41 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 MainWindow::~MainWindow() { delete ui; }
+
+void MainWindow::on_MenuBtn_clicked()
+{
+
+    if (!ui->MenuBtn->isChecked())
+        // Create a property animation object
+       { QPropertyAnimation* animation = new QPropertyAnimation(ui->LeftMenuContainer, "maximumWidth");
+
+        // Set the target value of the animation
+        animation->setEndValue(50);
+
+        // Set the duration of the animation in milliseconds
+        animation->setDuration(500);
+
+        // Start the animation
+        animation->start();
+        }
+        else
+        {QPropertyAnimation* animation = new QPropertyAnimation(ui->LeftMenuContainer, "maximumWidth");
+
+            // Set the target value of the animation
+            animation->setEndValue(129);
+
+            // Set the duration of the animation in milliseconds
+            animation->setDuration(500);
+
+            // Start the animation
+            animation->start();
+            }
+
+
+}
+
+
+
+void MainWindow::on_SettingsBtn_clicked()
+{
+ui->CenterMenuContainer->hide() ;}
