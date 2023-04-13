@@ -501,9 +501,9 @@ background-color: #2c313c	;
           <item>
            <widget class="QStackedWidget" name="stackedWidget">
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
-            <widget class="QWidget" name="page">
+            <widget class="QWidget" name="SettingsPage">
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
                <widget class="QLabel" name="label_2">
@@ -522,7 +522,7 @@ background-color: #2c313c	;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_3">
+            <widget class="QWidget" name="HelpPage">
              <layout class="QVBoxLayout" name="verticalLayout_9">
               <item>
                <widget class="QLabel" name="label_4">
@@ -541,7 +541,7 @@ background-color: #2c313c	;
               </item>
              </layout>
             </widget>
-            <widget class="QWidget" name="page_2">
+            <widget class="QWidget" name="InfoPage">
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
                <widget class="QLabel" name="label_3">

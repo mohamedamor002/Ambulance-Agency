@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QtGlobal>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -36,11 +37,32 @@ MainWindow::MainWindow(QWidget *parent)
     }
   }
 
+
+
+
   // Check the first button
 
   tabsButtonsFrame
       ->findChild<QPushButton *>("HomeBtn", Qt::FindDirectChildrenOnly)
       ->setChecked(true);
+
+  // Setup the  sub menu buttons group
+
+    QFrame * moTabsButtonsFrame = ui->LeftMenuSubContainer->findChild<QFrame *> ("frame_3",Qt::FindDirectChildrenOnly) ;
+    QStackedWidget *  mowstacked = ui->stackedWidget  ;
+    QButtonGroup * moButtonGroup = new QButtonGroup(this) ;
+    {
+        auto  mobuttons =  moTabsButtonsFrame->findChildren<QPushButton *> (
+                    QString(),Qt::FindDirectChildrenOnly) ;
+        qDebug() << mobuttons ;
+
+        for(QPushButton * mowbut: qAsConst(mobuttons))
+        {
+            mowbut->setCheckable(true) ;
+            moButtonGroup->addButton(mowbut) ;
+        }
+    }
+    qDebug() << moButtonGroup->buttons();
 
   // Connect button group to stacked widget
 
@@ -53,8 +75,30 @@ MainWindow::MainWindow(QWidget *parent)
             wStacked->setCurrentWidget(wPage);
           });
 
-  connect(ui->SettingsBtn, &QPushButton::clicked, ui->CenterMenuContainer,
-          [this]() { ui->CenterMenuContainer->hide(); });
+  //Connect 2nd button's group to another stacked widget
+
+  connect(moButtonGroup,
+          qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), mowstacked,
+          [=](QAbstractButton *clicked) {
+            QString pageName = clicked->objectName().replace("Btn", "Page");
+            qDebug() <<  pageName ;
+            QWidget *mowPage = mowstacked->findChild<QWidget *>(
+                pageName, Qt::FindDirectChildrenOnly);
+            mowstacked->setCurrentWidget(mowPage);
+          });
+
+
+
+
+
+ /* connect(ui->SettingsBtn, &QPushButton::clicked, ui->CenterMenuContainer,
+          [this]() { ui->CenterMenuContainer->show(); });
+
+  connect(ui->InfoBtn, &QPushButton::clicked, ui->CenterMenuContainer,
+          [this]() { ui->CenterMenuContainer->show(); });
+
+  connect(ui->HelpBtn, &QPushButton::clicked, ui->CenterMenuContainer,
+          [this]() { ui->CenterMenuContainer->show(); });*/
 
   connect(ui->MenuBtn, &QPushButton::clicked, ui->LeftMenuContainer,
           [this](bool checked) {
