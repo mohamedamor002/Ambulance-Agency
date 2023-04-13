@@ -214,11 +214,11 @@ background-color: #2c313c	;
                 <string>Data Analysis</string>
                </property>
                <property name="text">
-                <string>Data Analysis</string>
+                <string>Emergency</string>
                </property>
                <property name="icon">
                 <iconset resource="rsc.qrc">
-                 <normaloff>:/rsc/img/list.svg</normaloff>:/rsc/img/list.svg</iconset>
+                 <normaloff>:/rsc/img/alert-circle.svg</normaloff>:/rsc/img/alert-circle.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -234,11 +234,62 @@ background-color: #2c313c	;
                 <string>View Reports</string>
                </property>
                <property name="text">
-                <string>Reports</string>
+                <string>Ambulance</string>
                </property>
                <property name="icon">
                 <iconset resource="rsc.qrc">
-                 <normaloff>:/rsc/img/printer.svg</normaloff>:/rsc/img/printer.svg</iconset>
+                 <normaloff>:/rsc/img/truck.svg</normaloff>:/rsc/img/truck.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="EquipBtn">
+               <property name="text">
+                <string>Equipments</string>
+               </property>
+               <property name="icon">
+                <iconset resource="rsc.qrc">
+                 <normaloff>:/rsc/img/tool.svg</normaloff>:/rsc/img/tool.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="HospitalBtn">
+               <property name="text">
+                <string>Hospital</string>
+               </property>
+               <property name="icon">
+                <iconset resource="rsc.qrc">
+                 <normaloff>:/rsc/img/home.svg</normaloff>:/rsc/img/home.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="StaffBtn">
+               <property name="text">
+                <string>Staff</string>
+               </property>
+               <property name="icon">
+                <iconset resource="rsc.qrc">
+                 <normaloff>:/rsc/img/users.svg</normaloff>:/rsc/img/users.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -752,7 +803,7 @@ background-color: #2c313c	;
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
-                <number>2</number>
+                <number>5</number>
                </property>
                <widget class="QWidget" name="HomePage">
                 <layout class="QVBoxLayout" name="verticalLayout_16">
@@ -812,6 +863,39 @@ background-color: #2c313c	;
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="EquipPage">
+                <layout class="QVBoxLayout" name="verticalLayout_21">
+                 <item>
+                  <widget class="QLabel" name="label_16">
+                   <property name="text">
+                    <string>Equipments</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="HospitalPage">
+                <layout class="QVBoxLayout" name="verticalLayout_22">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="text">
+                    <string>Hospital</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="StaffPage">
+                <layout class="QVBoxLayout" name="verticalLayout_23">
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_2">
+                   <property name="text">
+                    <string>Staff</string>
                    </property>
                   </widget>
                  </item>
@@ -914,6 +998,9 @@ background-color: #2c313c	;
                 </item>
                 <item>
                  <widget class="QStackedWidget" name="stackedWidget_2">
+                  <property name="currentIndex">
+                   <number>0</number>
+                  </property>
                   <widget class="QWidget" name="page_4">
                    <layout class="QVBoxLayout" name="verticalLayout_13">
                     <item>

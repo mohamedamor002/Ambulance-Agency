@@ -16,11 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ambulance.cpp \
+    bill.cpp \
+    calendar.cpp \
+    connection.cpp \
+    equipment.cpp \
+    event.cpp \
+    hospital.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    staff.cpp
 
 HEADERS += \
-    mainwindow.h
+    ambulance.h \
+    bill.h \
+    calendar.h \
+    connection.h \
+    equipment.h \
+    event.h \
+    hospital.h \
+    mainwindow.h \
+    staff.h
 
 FORMS += \
     mainwindow.ui
