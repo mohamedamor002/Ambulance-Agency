@@ -89,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->CloseMoBtn,&QPushButton::clicked ,ui->CenterMenuContainer,[this](){ ui->CenterMenuContainer->hide();}) ;
 
 
-
+connect(ui->CloseNotifBtn,&QPushButton::clicked,ui->PopupNotificationContainer,[this](){ ui->PopupNotificationContainer->hide();});
 
 
   connect(ui->MenuBtn, &QPushButton::clicked, ui->LeftMenuContainer,

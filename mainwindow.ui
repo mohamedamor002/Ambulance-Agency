@@ -153,6 +153,12 @@ background-color: #2c313c	;
                 <iconset resource="rsc.qrc">
                  <normaloff>:/rsc/img/align-justify.svg</normaloff>:/rsc/img/align-justify.svg</iconset>
                </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
               </widget>
              </item>
             </layout>
@@ -188,6 +194,19 @@ background-color: #2c313c	;
              <property name="bottomMargin">
               <number>10</number>
              </property>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>12</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
              <item>
               <widget class="QPushButton" name="HomeBtn">
                <property name="toolTip">
@@ -966,7 +985,7 @@ background-color: #2c313c	;
                    <item>
                     <widget class="QLabel" name="label_7">
                      <property name="text">
-                      <string>Right Menu</string>
+                      <string>Recent emergencies</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1013,7 +1032,7 @@ background-color: #2c313c	;
                        </font>
                       </property>
                       <property name="text">
-                       <string>Profile</string>
+                       <string>Emergency N</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -1107,7 +1126,7 @@ background-color: #2c313c	;
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight">
-                 <widget class="QPushButton" name="pushButton_8">
+                 <widget class="QPushButton" name="CloseNotifBtn">
                   <property name="toolTip">
                    <string>Close Notification</string>
                   </property>
