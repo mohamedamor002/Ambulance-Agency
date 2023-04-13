@@ -5,9 +5,12 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
-  setWindowFlag(Qt::FramelessWindowHint);
 
+  setWindowFlag(Qt::FramelessWindowHint);
   ui->SizeGrip->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+  ui->MenuBtn->setCheckable(true);
+  ui->MenuBtn->setChecked(false);
 
   // Setup custom control buttons
 
@@ -42,51 +45,35 @@ MainWindow::MainWindow(QWidget *parent)
   // Connect button group to stacked widget
 
   connect(buttonGroup,
-          qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), this,
+          qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), wStacked,
           [=](QAbstractButton *clicked) {
             QString pageName = clicked->objectName().replace("Btn", "Page");
             QWidget *wPage = wStacked->findChild<QWidget *>(
                 pageName, Qt::FindDirectChildrenOnly);
             wStacked->setCurrentWidget(wPage);
           });
-}
 
-MainWindow::~MainWindow() { delete ui; }
+  connect(ui->SettingsBtn, &QPushButton::clicked, ui->CenterMenuContainer,
+          [this]() { ui->CenterMenuContainer->hide(); });
 
-void MainWindow::on_MenuBtn_clicked()
-{
+  connect(ui->MenuBtn, &QPushButton::clicked, ui->LeftMenuContainer,
+          [this](bool checked) {
+            // Create a property animation object
+            QPropertyAnimation *animation =
+                new QPropertyAnimation(ui->LeftMenuContainer, "maximumWidth");
 
-    if (!ui->MenuBtn->isChecked())
-        // Create a property animation object
-       { QPropertyAnimation* animation = new QPropertyAnimation(ui->LeftMenuContainer, "maximumWidth");
-
-        // Set the target value of the animation
-        animation->setEndValue(50);
-
-        // Set the duration of the animation in milliseconds
-        animation->setDuration(500);
-
-        // Start the animation
-        animation->start();
-        }
-        else
-        {QPropertyAnimation* animation = new QPropertyAnimation(ui->LeftMenuContainer, "maximumWidth");
+            const int endValue = checked ? 50 : 130;
+            const int duration = 500;
 
             // Set the target value of the animation
-            animation->setEndValue(129);
+            animation->setEndValue(endValue);
 
             // Set the duration of the animation in milliseconds
-            animation->setDuration(500);
+            animation->setDuration(duration);
 
             // Start the animation
             animation->start();
-            }
-
-
+          });
 }
 
-
-
-void MainWindow::on_SettingsBtn_clicked()
-{
-ui->CenterMenuContainer->hide() ;}
+MainWindow::~MainWindow() { delete ui; }
