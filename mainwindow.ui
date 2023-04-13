@@ -476,7 +476,7 @@ background-color: #2c313c	;
               </widget>
              </item>
              <item alignment="Qt::AlignRight">
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="CloseMoBtn">
                <property name="toolTip">
                 <string>Close Menu</string>
                </property>

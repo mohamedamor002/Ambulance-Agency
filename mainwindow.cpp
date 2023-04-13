@@ -54,7 +54,6 @@ MainWindow::MainWindow(QWidget *parent)
     {
         auto  mobuttons =  moTabsButtonsFrame->findChildren<QPushButton *> (
                     QString(),Qt::FindDirectChildrenOnly) ;
-        qDebug() << mobuttons ;
 
         for(QPushButton * mowbut: qAsConst(mobuttons))
         {
@@ -81,24 +80,17 @@ MainWindow::MainWindow(QWidget *parent)
           qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), mowstacked,
           [=](QAbstractButton *clicked) {
             QString pageName = clicked->objectName().replace("Btn", "Page");
-            qDebug() <<  pageName ;
             QWidget *mowPage = mowstacked->findChild<QWidget *>(
                 pageName, Qt::FindDirectChildrenOnly);
+            ui->CenterMenuContainer->show();
             mowstacked->setCurrentWidget(mowPage);
           });
 
+  connect(ui->CloseMoBtn,&QPushButton::clicked ,ui->CenterMenuContainer,[this](){ ui->CenterMenuContainer->hide();}) ;
 
 
 
 
- /* connect(ui->SettingsBtn, &QPushButton::clicked, ui->CenterMenuContainer,
-          [this]() { ui->CenterMenuContainer->show(); });
-
-  connect(ui->InfoBtn, &QPushButton::clicked, ui->CenterMenuContainer,
-          [this]() { ui->CenterMenuContainer->show(); });
-
-  connect(ui->HelpBtn, &QPushButton::clicked, ui->CenterMenuContainer,
-          [this]() { ui->CenterMenuContainer->show(); });*/
 
   connect(ui->MenuBtn, &QPushButton::clicked, ui->LeftMenuContainer,
           [this](bool checked) {
