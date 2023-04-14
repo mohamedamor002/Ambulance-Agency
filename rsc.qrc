@@ -289,4 +289,19 @@
         <file>img/zoom-out.svg</file>
         <file>img/ambulance.png</file>
     </qresource>
+    <qresource prefix="/equipment">
+        <file>img/ambulance.png</file>
+        <file>img/blankets and pillows.jpeg</file>
+        <file>img/ermergency.jpg</file>
+        <file>img/firstaid.png</file>
+        <file>img/gloves.jpg</file>
+        <file>img/neckcollar.jpg</file>
+        <file>img/png-clipart-intravenous-therapy-infusion-set-dialysis-catheter-syringe-catheter-miscellaneous-blue-thumbnail.png</file>
+        <file>img/spine board.jpg</file>
+        <file>img/stretcher-bed-ramp.jpg</file>
+        <file>img/suction device.jpg</file>
+        <file>img/téléchargement (1).jpg</file>
+        <file>img/téléchargement.jpg</file>
+        <file>img/when-was-the-defibrillator-invented.jpg</file>
+    </qresource>
 </RCC>

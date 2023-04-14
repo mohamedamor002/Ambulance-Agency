@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QButtonGroup>
 #include <QPropertyAnimation>
+#include "equipment.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,7 +18,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+    void on_AddEquipBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Equipment Etmp ;
+
+    void  setEquipmentInterface() ;
+    void setWindowInterface() ;
+    void  addEquipment() ;
 };
 #endif // MAINWINDOW_H

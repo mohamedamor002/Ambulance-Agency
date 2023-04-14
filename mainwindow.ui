@@ -46,7 +46,7 @@ background-color: #16191d
 
 background-color: #2c313c	;
 }
-#frame_4 , #frame_8 , #PopupNotificationSubContainer
+#frame_4 , #frame_8 , #PopupNotificationSubContainer, #frame_11
 {background-color: #16191d	;
 border-radius: 10px ;
 }
@@ -56,6 +56,77 @@ background-color: #2c313c	;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">/* Button */
+QFrame#frame_11 QPushButton {
+    color: #fff;
+    background-color: rgb(31, 35, 42);
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+}
+
+QFrame#frame_11 QPushButton:hover {
+    background-color: rgb(50, 55, 66);
+}
+
+/* Line Edit */
+QFrame#frame_11 QLineEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+/* Spin Box */
+QFrame#frame_11 QSpinBox {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+/* Combo Box */
+QFrame#frame_11 QComboBox {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    min-width: 6em;
+}
+
+QFrame#frame_11 QComboBox:editable {
+    background-color: rgb(50, 55, 66);
+}
+/* Date Edit */
+QFrame#frame_11 QDateEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+QFrame#frame_11 QDateEdit::drop-down {
+    background-color: rgb(31, 35, 42);
+    border: none;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+}
+
+QFrame#frame_11 QDateEdit::down-arrow {
+    image: url(&quot;path/to/arrow/down.png&quot;);
+    width: 20px;
+    height: 20px;
+}
+
+</string>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="spacing">
      <number>0</number>
@@ -822,7 +893,7 @@ background-color: #2c313c	;
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
-                <number>5</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="HomePage">
                 <layout class="QVBoxLayout" name="verticalLayout_16">
@@ -888,12 +959,345 @@ background-color: #2c313c	;
                 </layout>
                </widget>
                <widget class="QWidget" name="EquipPage">
-                <layout class="QVBoxLayout" name="verticalLayout_21">
-                 <item>
-                  <widget class="QLabel" name="label_16">
-                   <property name="text">
-                    <string>Equipments</string>
+                <layout class="QHBoxLayout" name="horizontalLayout_13">
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QFrame" name="frame_11">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
                    </property>
+                   <property name="font">
+                    <font>
+                     <weight>50</weight>
+                     <bold>false</bold>
+                    </font>
+                   </property>
+                   <property name="tabletTracking">
+                    <bool>false</bool>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_21">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="topMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>6</number>
+                    </property>
+                    <property name="bottomMargin">
+                     <number>6</number>
+                    </property>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_14">
+                      <item>
+                       <widget class="QLabel" name="label_16">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Equipment Id: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditIdEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_15">
+                      <item>
+                       <widget class="QLabel" name="label_17">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Equipment Name: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QComboBox" name="comboBoxNameEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_16">
+                      <item>
+                       <widget class="QLabel" name="label_18">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Serial Number: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSpinBox" name="spinBoxSerialEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_17">
+                      <item>
+                       <widget class="QLabel" name="label_19">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Manufacturer: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditManufacEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_18">
+                      <item>
+                       <widget class="QLabel" name="label_20">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Status: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QComboBox" name="comboBoxStatusEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_21">
+                      <item>
+                       <widget class="QLabel" name="label_23">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Quantity: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSpinBox" name="spinBoxQuantityEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_19">
+                      <item>
+                       <widget class="QLabel" name="label_21">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Purchase Date: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QDateEdit" name="dateEditpEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_20">
+                      <item>
+                       <widget class="QLabel" name="label_22">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Expiration Date: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QDateEdit" name="dateEditeEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_22">
+                      <item>
+                       <widget class="QLabel" name="label_24">
+                        <property name="maximumSize">
+                         <size>
+                          <width>120</width>
+                          <height>18</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Description: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPlainTextEdit" name="plainTextEditInfoEquip">
+                        <property name="maximumSize">
+                         <size>
+                          <width>200</width>
+                          <height>150</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_23">
+                      <item>
+                       <widget class="QPushButton" name="pushButton">
+                        <property name="text">
+                         <string>PushButton</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="AddEquipBtn">
+                        <property name="text">
+                         <string>Add</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_12">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_24">
+                    <item>
+                     <widget class="QTableView" name="tableView">
+                      <property name="styleSheet">
+                       <string notr="true">QTableView {
+    background-color: rgb(31, 35, 42);
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    gridline-color: #333333;
+    QSizePolicy::Expanding;
+}
+
+QTableView::item {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    selection-background-color: rgb(73, 80, 96);
+    selection-color: #fff;
+}
+
+QHeaderView {
+    background-color: rgb(31, 35, 42);
+    border: none;
+    padding: 5px 10px;
+    margin: 0;
+    color: #fff;
+}
+
+QHeaderView::section {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    margin: 0;
+    color: #fff;
+}
+
+QHeaderView::section:hover {
+    background-color: rgb(73, 80, 96);
+}
+
+QScrollBar:vertical {
+    background-color: rgb(31, 35, 42);
+    border: none;
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgb(73, 80, 96);
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: rgb(100, 107, 123);
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background-color: transparent;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background-color: transparent;
+}
+</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
