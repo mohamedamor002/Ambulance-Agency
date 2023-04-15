@@ -20,11 +20,13 @@ SOURCES += \
     bill.cpp \
     calendar.cpp \
     connection.cpp \
+    dialog.cpp \
     equipment.cpp \
     event.cpp \
     hospital.cpp \
     main.cpp \
     mainwindow.cpp \
+    smtp.cpp \
     staff.cpp
 
 HEADERS += \
@@ -32,13 +34,16 @@ HEADERS += \
     bill.h \
     calendar.h \
     connection.h \
+    dialog.h \
     equipment.h \
     event.h \
     hospital.h \
     mainwindow.h \
+    smtp.h \
     staff.h
 
 FORMS += \
+    dialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.
