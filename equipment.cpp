@@ -56,7 +56,7 @@ QSqlQueryModel * Equipment::read()
     QSqlQueryModel * model = new QSqlQueryModel() ;
     model->setQuery("SELECT * from EQUIPMENT") ;
     model->setHeaderData(0,Qt::Horizontal,QObject::tr("Id"));
-    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Equipment Name"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Equipment"));
     model->setHeaderData(2,Qt::Horizontal,QObject::tr("Serial Number"));
     model->setHeaderData(3,Qt::Horizontal,QObject::tr("Manufacturer"));
     model->setHeaderData(4,Qt::Horizontal,QObject::tr("Purchase Date"));

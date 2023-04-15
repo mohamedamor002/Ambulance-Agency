@@ -43,10 +43,7 @@ ui->comboBoxFilterEquip->addItems(items);
 
 ui->spinBoxQuantityEquip->setRange(-1000, 1000);
 
-
 }
-
-
 void MainWindow :: setWindowInterface()
 {
     setWindowFlag(Qt::FramelessWindowHint);

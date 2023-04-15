@@ -66,6 +66,22 @@ QFrame#frame_11 QPushButton {
     text-align: center;
     border: none;
 }
+QFrame#frame_12 QPushButton {
+    color: #fff;
+    background-color: rgb(31, 35, 42);
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+}
+QFrame#frame_11 QPlainTextEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
 
 QFrame#frame_11 QPushButton:hover {
     background-color: rgb(50, 55, 66);
@@ -963,7 +979,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                  <item alignment="Qt::AlignLeft">
                   <widget class="QFrame" name="frame_11">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -1001,7 +1017,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </property>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_14">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_16">
                         <property name="font">
                          <font>
@@ -1021,7 +1037,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_15">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_17">
                         <property name="font">
                          <font>
@@ -1041,7 +1057,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_16">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_18">
                         <property name="font">
                          <font>
@@ -1061,7 +1077,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_17">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_19">
                         <property name="font">
                          <font>
@@ -1081,7 +1097,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_18">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_20">
                         <property name="font">
                          <font>
@@ -1101,7 +1117,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_21">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_23">
                         <property name="font">
                          <font>
@@ -1121,7 +1137,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_19">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_21">
                         <property name="font">
                          <font>
@@ -1141,7 +1157,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     </item>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_20">
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_22">
                         <property name="font">
                          <font>
@@ -1185,7 +1201,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
                         <property name="maximumSize">
                          <size>
                           <width>200</width>
-                          <height>150</height>
+                          <height>130</height>
                          </size>
                         </property>
                        </widget>
@@ -1195,14 +1211,26 @@ QFrame#frame_11 QDateEdit::down-arrow {
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_23">
                       <item>
-                       <widget class="QPushButton" name="pushButton">
+                       <widget class="QPushButton" name="UpdateEquipBtn">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
                         <property name="text">
-                         <string>PushButton</string>
+                         <string>Update</string>
                         </property>
                        </widget>
                       </item>
                       <item>
                        <widget class="QPushButton" name="AddEquipBtn">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
                         <property name="text">
                          <string>Add</string>
                         </property>
@@ -1216,10 +1244,45 @@ QFrame#frame_11 QDateEdit::down-arrow {
                  <item>
                   <widget class="QFrame" name="frame_12">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QFrame#frame_12 QPushButton {
+    color: #fff;
+    background-color: rgb(31, 35, 42);
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+}
+QFrame#frame_12 QPushButton:hover {
+    background-color: rgb(50, 55, 66);
+}
+QFrame#frame_12 QLineEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+QFrame#frame_12 QComboBox {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    min-width: 6em;
+}
+
+QFrame#frame_12 QComboBox:editable {
+    background-color: rgb(50, 55, 66);
+}
+
+
+</string>
                    </property>
                    <property name="frameShape">
                     <enum>QFrame::StyledPanel</enum>
@@ -1229,73 +1292,99 @@ QFrame#frame_11 QDateEdit::down-arrow {
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_24">
                     <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_25">
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_3">
+                        <property name="placeholderText">
+                         <string>Search</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item alignment="Qt::AlignRight">
+                       <widget class="QComboBox" name="comboBoxFilterEquip"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
                      <widget class="QTableView" name="tableView">
                       <property name="styleSheet">
-                       <string notr="true">QTableView {
-    background-color: rgb(31, 35, 42);
-    border: none;
-    padding: 0;
-    margin: 0;
+                       <string notr="true">QFrame#frame_12 QTableView {
+    background-color: rgb(50, 55, 66);
     color: #fff;
-    gridline-color: #333333;
-    QSizePolicy::Expanding;
-}
-
-QTableView::item {
-    background-color: transparent;
+    selection-background-color: rgb(31, 35, 42);
     border: none;
-    padding: 5px 10px;
-    color: #fff;
-    selection-background-color: rgb(73, 80, 96);
-    selection-color: #fff;
-}
-
-QHeaderView {
-    background-color: rgb(31, 35, 42);
-    border: none;
-    padding: 5px 10px;
-    margin: 0;
-    color: #fff;
-}
-
-QHeaderView::section {
-    background-color: transparent;
-    border: none;
-    padding: 5px 10px;
-    margin: 0;
-    color: #fff;
-}
-
-QHeaderView::section:hover {
-    background-color: rgb(73, 80, 96);
-}
-
-QScrollBar:vertical {
-    background-color: rgb(31, 35, 42);
-    border: none;
-    width: 10px;
-}
-
-QScrollBar::handle:vertical {
-    background-color: rgb(73, 80, 96);
     border-radius: 5px;
-    min-height: 20px;
+    padding: 5px;
 }
 
-QScrollBar::handle:vertical:hover {
-    background-color: rgb(100, 107, 123);
+QFrame#frame_12 QHeaderView::section {
+    background-color: rgb(31, 35, 42);
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-right: 1px solid rgb(50, 55, 66);
 }
 
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
-    background-color: transparent;
+QFrame#frame_12 QTableView::item:selected {
+    background-color: rgb(31, 35, 42);
+    color: #fff;
+}
+QFrame#frame_12 QScrollBar:horizontal {
+    background-color: rgb(31, 35, 42);
+    height: 10px;
 }
 
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-    background-color: transparent;
+QFrame#frame_12 QScrollBar::handle:horizontal {
+    background-color: rgb(50, 55, 66);
+    border-radius: 5px;
 }
+
+QFrame#frame_12 QScrollBar::add-line:horizontal,
+QFrame#frame_12 QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
+
+QFrame#frame_12 QScrollBar::add-page:horizontal,
+QFrame#frame_12 QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
 </string>
                       </property>
                      </widget>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_24">
+                      <item>
+                       <widget class="QPushButton" name="ExportEquipBtn">
+                        <property name="font">
+                         <font>
+                          <pointsize>9</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Export</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="DeleteEquipBtn">
+                        <property name="font">
+                         <font>
+                          <pointsize>9</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Delete</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
                     </item>
                    </layout>
                   </widget>

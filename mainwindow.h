@@ -20,7 +20,8 @@ public:
 
 private slots:
 
-    void on_AddEquipBtn_clicked();
+
+    bool on_lineEditManufacEquip_editingFinished();
 
 private:
     Ui::MainWindow *ui;
@@ -28,6 +29,7 @@ private:
 
     void  setEquipmentInterface() ;
     void setWindowInterface() ;
-    void  addEquipment() ;
+    void  Equipment_CRUD() ;
+    Equipment GetEquipmentFromForm() ;
 };
 #endif // MAINWINDOW_H
