@@ -10,6 +10,8 @@
 #include <QValueAxis>
 #include <QChartView>
 #include <QDate>
+#include <QDebug>
+#include <QSqlError>
 
 
 using namespace QtCharts;

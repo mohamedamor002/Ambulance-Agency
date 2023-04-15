@@ -23,6 +23,11 @@ private slots:
 
     bool on_lineEditManufacEquip_editingFinished();
 
+    void on_comboBoxFilterEquip_activated(const QString &arg1);
+
+
+    void on_lineEditSearchEquip_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     Equipment Etmp ;
@@ -31,5 +36,7 @@ private:
     void setWindowInterface() ;
     void  Equipment_CRUD() ;
     Equipment GetEquipmentFromForm() ;
+     QString FilterEquip;
+     QString SearchEquip;
 };
 #endif // MAINWINDOW_H

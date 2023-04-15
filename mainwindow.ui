@@ -1294,7 +1294,7 @@ QFrame#frame_12 QComboBox:editable {
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_25">
                       <item>
-                       <widget class="QLineEdit" name="lineEdit_3">
+                       <widget class="QLineEdit" name="lineEditSearchEquip">
                         <property name="placeholderText">
                          <string>Search</string>
                         </property>

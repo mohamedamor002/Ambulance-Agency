@@ -267,7 +267,6 @@ return model   ;
 QSqlQueryModel * Equipment:: search3(QString s,QString p)
 
 {QSqlQueryModel *model= new QSqlQueryModel() ;
-
     QSqlQuery query ;
 
     query.prepare("SELECT * FROM EQUIPMENT WHERE NAME like '%"+s+"%' ORDER BY "+p);
@@ -277,6 +276,8 @@ QSqlQueryModel * Equipment:: search3(QString s,QString p)
 
 
     query.exec();
+//    qDebug() << query.executedQuery();
+
     model->setQuery(query);
     model->setHeaderData(0, Qt::Horizontal, QObject::tr("Id"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Equipment Name"));

@@ -9,14 +9,19 @@ MainWindow::MainWindow(QWidget *parent)
   //Setting Window Functionalities
 setWindowInterface();
 // Setting Equipment tab
+
+//Equipment
 setEquipmentInterface();
  Equipment_CRUD() ;
+
 
 }
 
 MainWindow::~MainWindow() { delete ui; }
 void MainWindow::  setEquipmentInterface()
 {
+
+
     ui->comboBoxStatusEquip->addItem("Expired")  ;
     ui->comboBoxStatusEquip->addItem("Valid") ;
 
@@ -35,7 +40,7 @@ void MainWindow::  setEquipmentInterface()
 ui->tableView->verticalHeader()->hide() ;
 
 QStringList items;
-items  << "QUANTITY" << "STATUS";
+items << "E_ID" << "QUANTITY" << "STATUS";
 
 // Add the list of items to the QComboBoxFilter
 ui->comboBoxFilterEquip->addItems(items);
@@ -44,11 +49,15 @@ ui->comboBoxFilterEquip->addItems(items);
 ui->spinBoxQuantityEquip->setRange(-1000, 1000);
 
 
+//qDebug() << ui->comboBoxFilterEquip->currentText();
+FilterEquip = ui->comboBoxFilterEquip->currentText();
+
+ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+
 }
-
-
 void MainWindow :: setWindowInterface()
 {
+
     setWindowFlag(Qt::FramelessWindowHint);
     ui->SizeGrip->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 
@@ -104,7 +113,7 @@ void MainWindow :: setWindowInterface()
               moButtonGroup->addButton(mowbut) ;
           }
       }
-      qDebug() << moButtonGroup->buttons();
+//      qDebug() << moButtonGroup->buttons();
 
     // Connect button group to stacked widget
 
@@ -154,7 +163,6 @@ void MainWindow :: setWindowInterface()
               animation->start();
             });
 
-    ui->tableView->setModel(Etmp.read()) ;
 
 
 
@@ -167,7 +175,7 @@ void  MainWindow:: Equipment_CRUD()
         bool test= E.Create();
         if(test)
         {
-            ui->tableView->setModel(Etmp.read()) ;
+            ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
             QMessageBox ::information(nullptr,QObject::tr("Ok"),QObject::tr("Insert done\n Click cancel to exist"),QMessageBox::Cancel);
             ui->spinBoxSerialEquip->clear();
             ui->spinBoxQuantityEquip->clear() ;
@@ -217,7 +225,7 @@ void  MainWindow:: Equipment_CRUD()
 
         bool test = Etmp.Delete(id) ;
         if (test) {
-            ui->tableView->setModel(Etmp.read()) ;
+            ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
             QMessageBox::information(nullptr, QObject::tr("Ok"), QObject::tr("Delete done\n Click cancel to exist"), QMessageBox::Cancel);
         } else {
             QMessageBox::critical(nullptr, QObject::tr("Ok"), QObject::tr("Delete done\n Click cancel to exist"), QMessageBox::Cancel);
@@ -231,7 +239,7 @@ void  MainWindow:: Equipment_CRUD()
         if (on_lineEditManufacEquip_editingFinished()) {
             bool test = E.Update();
             if (test) {
-                ui->tableView->setModel(Etmp.read());
+                ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
                 QMessageBox::information(nullptr, QObject::tr("Ok"), QObject::tr("Update done\n Click cancel to exist"), QMessageBox::Cancel);
             } else {
                 QMessageBox::information(nullptr, QObject::tr("not ok\n"), QObject::tr("update not done\n Click cancel to exist"), QMessageBox::Cancel);
@@ -281,4 +289,21 @@ Equipment MainWindow:: GetEquipmentFromForm()
     Equipment E(id, name, serial, manu, purchase, expire, status, info, qu);
 
     return E ;
+}
+
+void MainWindow::on_comboBoxFilterEquip_activated(const QString &arg1)
+{  FilterEquip=arg1;
+
+//    ui->tableView->setModel(Etmp.read_sortby(arg1)) ;
+    ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+
+}
+
+
+void MainWindow::on_lineEditSearchEquip_textChanged(const QString &arg1)
+{
+    SearchEquip=arg1;
+
+        ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+
 }
