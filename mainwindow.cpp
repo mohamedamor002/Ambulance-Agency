@@ -80,13 +80,10 @@ void MainWindow :: setWindowInterface()
     QStackedWidget *wStacked = ui->stackedWidget_3;
     QButtonGroup *buttonGroup = new QButtonGroup(this);
 
-    {
-      auto buttons = tabsButtonsFrame->findChildren<QPushButton *>(
-          QString(), Qt::FindDirectChildrenOnly);
-      for (QPushButton *wBut : qAsConst(buttons)) {
-        wBut->setCheckable(true);
-        buttonGroup->addButton(wBut);
-      }
+    foreach (QPushButton *wBut, tabsButtonsFrame->findChildren<QPushButton *>(
+                                    QString(), Qt::FindDirectChildrenOnly)) {
+      wBut->setCheckable(true);
+      buttonGroup->addButton(wBut);
     }
 
 
@@ -103,15 +100,12 @@ void MainWindow :: setWindowInterface()
       QFrame * moTabsButtonsFrame = ui->LeftMenuSubContainer->findChild<QFrame *> ("frame_3",Qt::FindDirectChildrenOnly) ;
       QStackedWidget *  mowstacked = ui->stackedWidget  ;
       QButtonGroup * moButtonGroup = new QButtonGroup(this) ;
-      {
-          auto  mobuttons =  moTabsButtonsFrame->findChildren<QPushButton *> (
-                      QString(),Qt::FindDirectChildrenOnly) ;
 
-          for(QPushButton * mowbut: qAsConst(mobuttons))
-          {
-              mowbut->setCheckable(true) ;
-              moButtonGroup->addButton(mowbut) ;
-          }
+      foreach (QPushButton *mowbut,
+               moTabsButtonsFrame->findChildren<QPushButton *>(
+                   QString(), Qt::FindDirectChildrenOnly)) {
+        mowbut->setCheckable(true);
+        moButtonGroup->addButton(mowbut);
       }
 //      qDebug() << moButtonGroup->buttons();
 
