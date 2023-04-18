@@ -46,7 +46,7 @@ background-color: #16191d
 
 background-color: #2c313c	;
 }
-#frame_4 , #frame_8 , #PopupNotificationSubContainer, #frame_11
+#frame_4 , #frame_8 , #PopupNotificationSubContainer, #frame_11,#frame_13
 {background-color: #16191d	;
 border-radius: 10px ;
 }
@@ -335,7 +335,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="ReportsBtn">
+              <widget class="QPushButton" name="AmbulanceBtn">
                <property name="toolTip">
                 <string>View Reports</string>
                </property>
@@ -909,10 +909,10 @@ QFrame#frame_11 QDateEdit::down-arrow {
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
-                <number>4</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="HomePage">
-                <layout class="QVBoxLayout" name="verticalLayout_16">
+                <layout class="QHBoxLayout" name="horizontalLayout_26">
                  <item>
                   <widget class="QLabel" name="label_10">
                    <property name="font">
@@ -953,23 +953,278 @@ QFrame#frame_11 QDateEdit::down-arrow {
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="ReportsPage">
-                <layout class="QVBoxLayout" name="verticalLayout_18">
+               <widget class="QWidget" name="AmbulancePage">
+                <layout class="QHBoxLayout" name="horizontalLayout_27">
+                 <item alignment="Qt::AlignLeft">
+                  <widget class="QFrame" name="frame_13">
+                   <property name="styleSheet">
+                    <string notr="true">
+QFrame#frame_13 QPushButton {
+    color: #fff;
+    background-color: rgb(31, 35, 42);
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    border: none;
+}
+QFrame#frame_13 QPlainTextEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+
+QFrame#frame_13 QPushButton:hover {
+    background-color: rgb(50, 55, 66);
+}
+
+/* Line Edit */
+QFrame#frame_13 QLineEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+/* Spin Box */
+QFrame#frame_13 QSpinBox {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+/* Combo Box */
+QFrame#frame_13 QComboBox {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    min-width: 6em;
+}
+
+QFrame#frame_13 QComboBox:editable {
+    background-color: rgb(50, 55, 66);
+}
+/* Date Edit */
+QFrame#frame_13 QDateEdit {
+    background-color: rgb(50, 55, 66);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+}
+
+QFrame#frame_11 QDateEdit::drop-down {
+    background-color: rgb(31, 35, 42);
+    border: none;
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+}
+
+QFrame#frame_11 QDateEdit::down-arrow {
+    image: url(&quot;path/to/arrow/down.png&quot;);
+    width: 20px;
+    height: 20px;
+}
+
+</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_28">
+                      <item>
+                       <widget class="QLabel" name="label_12">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>ID:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditIdAmb"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_29">
+                      <item>
+                       <widget class="QLabel" name="label_25">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Registration Number</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditRegAmb"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_30">
+                      <item>
+                       <widget class="QLabel" name="label_26">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Ambulance Type</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditTypeAmb"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_33">
+                      <item>
+                       <widget class="QLabel" name="label_29">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Manufacturer</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditManAmb"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_31">
+                      <item>
+                       <widget class="QLabel" name="label_27">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Fuel Type</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditTFAmb"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_32">
+                      <item>
+                       <widget class="QLabel" name="label_28">
+                        <property name="font">
+                         <font>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Date of manufacturing</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEditDateAmb"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_34">
+                      <item>
+                       <widget class="QPushButton" name="pushButtonUpdateAmbBtn">
+                        <property name="text">
+                         <string>Update</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButtonAddAmbBtn">
+                        <property name="text">
+                         <string>Add</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
                  <item>
-                  <widget class="QLabel" name="label_12">
-                   <property name="font">
-                    <font>
-                     <pointsize>13</pointsize>
-                     <weight>75</weight>
-                     <bold>true</bold>
-                    </font>
+                  <widget class="QFrame" name="frame_14">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
                    </property>
-                   <property name="text">
-                    <string>Reports</string>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
                    </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_18">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_35">
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_3"/>
+                      </item>
+                      <item>
+                       <widget class="QComboBox" name="comboBox"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <widget class="QTableView" name="tableView"/>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_36">
+                      <item>
+                       <widget class="QPushButton" name="pushButton">
+                        <property name="text">
+                         <string>Export</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_2">
+                        <property name="text">
+                         <string>Delete</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
                   </widget>
                  </item>
                 </layout>
@@ -1306,7 +1561,7 @@ QFrame#frame_12 QComboBox:editable {
                      </layout>
                     </item>
                     <item>
-                     <widget class="QTableView" name="tableView">
+                     <widget class="QTableView" name="tableViewEquip">
                       <property name="styleSheet">
                        <string notr="true">QFrame#frame_12 QTableView {
     background-color: rgb(50, 55, 66);

@@ -37,7 +37,7 @@ void MainWindow::  setEquipmentInterface()
     ui->comboBoxNameEquip->addItem(QIcon(":/equipment/img/firstaid.png"),"First aid kit") ;
     ui->comboBoxNameEquip->addItem(QIcon(":/equipment/img/blankets and pillows.jpeg"),"Blankets") ;
     ui->comboBoxNameEquip->addItem(QIcon(":/equipment/img/gloves.jpg"),"gloves and gowns") ;
-ui->tableView->verticalHeader()->hide() ;
+ui->tableViewEquip->verticalHeader()->hide() ;
 
 QStringList items;
 items << "E_ID" << "QUANTITY" << "STATUS";
@@ -52,7 +52,7 @@ ui->spinBoxQuantityEquip->setRange(-1000, 1000);
 //qDebug() << ui->comboBoxFilterEquip->currentText();
 FilterEquip = ui->comboBoxFilterEquip->currentText();
 
-ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+ui->tableViewEquip->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
 
 }
 void MainWindow :: setWindowInterface()
@@ -169,7 +169,7 @@ void  MainWindow:: Equipment_CRUD()
         bool test= E.Create();
         if(test)
         {
-            ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+            ui->tableViewEquip->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
             QMessageBox ::information(nullptr,QObject::tr("Ok"),QObject::tr("Insert done\n Click cancel to exist"),QMessageBox::Cancel);
             ui->spinBoxSerialEquip->clear();
             ui->spinBoxQuantityEquip->clear() ;
@@ -186,16 +186,16 @@ void  MainWindow:: Equipment_CRUD()
     });
 
 // Double click for Update
-    connect(ui->tableView, &QTableView::doubleClicked, this, [this](const QModelIndex& index){
-        QString id = ui->tableView->model()->data(index.sibling(index.row(), 0)).toString();
-        QString name = ui->tableView->model()->data(index.sibling(index.row(), 1)).toString();
-        int serial = ui->tableView->model()->data(index.sibling(index.row(), 2)).toInt();
-        QString manu = ui->tableView->model()->data(index.sibling(index.row(), 3)).toString();
-        QDate p = ui->tableView->model()->data(index.sibling(index.row(), 4)).toDate();
-        QDate e = ui->tableView->model()->data(index.sibling(index.row(), 5)).toDate();
-        QString s = ui->tableView->model()->data(index.sibling(index.row(), 6)).toString();
-        QString i = ui->tableView->model()->data(index.sibling(index.row(), 7)).toString();
-        int q = ui->tableView->model()->data(index.sibling(index.row(), 8)).toInt();
+    connect(ui->tableViewEquip, &QTableView::doubleClicked, this, [this](const QModelIndex& index){
+        QString id = ui->tableViewEquip->model()->data(index.sibling(index.row(), 0)).toString();
+        QString name = ui->tableViewEquip->model()->data(index.sibling(index.row(), 1)).toString();
+        int serial = ui->tableViewEquip->model()->data(index.sibling(index.row(), 2)).toInt();
+        QString manu = ui->tableViewEquip->model()->data(index.sibling(index.row(), 3)).toString();
+        QDate p = ui->tableViewEquip->model()->data(index.sibling(index.row(), 4)).toDate();
+        QDate e = ui->tableViewEquip->model()->data(index.sibling(index.row(), 5)).toDate();
+        QString s = ui->tableViewEquip->model()->data(index.sibling(index.row(), 6)).toString();
+        QString i = ui->tableViewEquip->model()->data(index.sibling(index.row(), 7)).toString();
+        int q = ui->tableViewEquip->model()->data(index.sibling(index.row(), 8)).toInt();
 
         ui->lineEditIdEquip->setText(id);
         ui->spinBoxQuantityEquip->setValue(q);
@@ -211,15 +211,15 @@ void  MainWindow:: Equipment_CRUD()
 
     //Delete Equipment
     connect(ui->DeleteEquipBtn, &QPushButton::clicked, [=]() {
-        QModelIndex index = ui->tableView->currentIndex();
+        QModelIndex index = ui->tableViewEquip->currentIndex();
 
         // Retrieve the data for the first column of the selected row
-        QVariant data = ui->tableView->model()->data(index.sibling(index.row(), 0));
+        QVariant data = ui->tableViewEquip->model()->data(index.sibling(index.row(), 0));
         int id  = data.toInt() ;
 
         bool test = Etmp.Delete(id) ;
         if (test) {
-            ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+            ui->tableViewEquip->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
             QMessageBox::information(nullptr, QObject::tr("Ok"), QObject::tr("Delete done\n Click cancel to exist"), QMessageBox::Cancel);
         } else {
             QMessageBox::critical(nullptr, QObject::tr("Ok"), QObject::tr("Delete done\n Click cancel to exist"), QMessageBox::Cancel);
@@ -233,7 +233,7 @@ void  MainWindow:: Equipment_CRUD()
         if (on_lineEditManufacEquip_editingFinished()) {
             bool test = E.Update();
             if (test) {
-                ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+                ui->tableViewEquip->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
                 QMessageBox::information(nullptr, QObject::tr("Ok"), QObject::tr("Update done\n Click cancel to exist"), QMessageBox::Cancel);
             } else {
                 QMessageBox::information(nullptr, QObject::tr("not ok\n"), QObject::tr("update not done\n Click cancel to exist"), QMessageBox::Cancel);
@@ -288,8 +288,8 @@ Equipment MainWindow:: GetEquipmentFromForm()
 void MainWindow::on_comboBoxFilterEquip_activated(const QString &arg1)
 {  FilterEquip=arg1;
 
-//    ui->tableView->setModel(Etmp.read_sortby(arg1)) ;
-    ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+//    ui->tableViewEquip->setModel(Etmp.read_sortby(arg1)) ;
+    ui->tableViewEquip->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
 
 }
 
@@ -298,7 +298,7 @@ void MainWindow::on_lineEditSearchEquip_textChanged(const QString &arg1)
 {
     SearchEquip=arg1;
 
-        ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
+        ui->tableViewEquip->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
 
 }
 void MainWindow:: Ambulance_CRUD()
