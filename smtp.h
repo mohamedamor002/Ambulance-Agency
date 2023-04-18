@@ -11,7 +11,7 @@
 #include <QByteArray>
 #include <QFile>
 #include <QFileInfo>
-
+#include <QSslSocket>
 
 
 

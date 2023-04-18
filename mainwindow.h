@@ -34,7 +34,9 @@ private:
 
     void  setEquipmentInterface() ;
     void setWindowInterface() ;
+    void setWindowAmbulance() ;
     void  Equipment_CRUD() ;
+    void Ambulance_CRUD() ;
     Equipment GetEquipmentFromForm() ;
      QString FilterEquip;
      QString SearchEquip;

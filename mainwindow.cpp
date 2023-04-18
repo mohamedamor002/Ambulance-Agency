@@ -307,3 +307,18 @@ void MainWindow::on_lineEditSearchEquip_textChanged(const QString &arg1)
         ui->tableView->setModel(Etmp.search3(SearchEquip,FilterEquip)) ;
 
 }
+void MainWindow:: Ambulance_CRUD()
+{
+
+
+
+
+}
+void MainWindow::setWindowAmbulance()
+{
+
+
+
+
+
+}
