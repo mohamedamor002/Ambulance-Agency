@@ -909,7 +909,7 @@ QFrame#frame_11 QDateEdit::down-arrow {
              <item>
               <widget class="QStackedWidget" name="stackedWidget_3">
                <property name="currentIndex">
-                <number>2</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="HomePage">
                 <layout class="QHBoxLayout" name="horizontalLayout_26">
@@ -1647,11 +1647,309 @@ QFrame#frame_12 QScrollBar::sub-page:horizontal {
                 </layout>
                </widget>
                <widget class="QWidget" name="HospitalPage">
-                <layout class="QVBoxLayout" name="verticalLayout_22">
+                <layout class="QHBoxLayout" name="horizontalLayout_37">
                  <item>
-                  <widget class="QLineEdit" name="lineEdit">
-                   <property name="text">
-                    <string>Hospital</string>
+                  <widget class="QFrame" name="frame_15">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_26">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_38">
+                      <item>
+                       <widget class="QLabel" name="label_30">
+                        <property name="text">
+                         <string>Hospital  ID: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_39">
+                      <item>
+                       <widget class="QLabel" name="label_31">
+                        <property name="text">
+                         <string>Hospitall Name</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_4"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_40">
+                      <item>
+                       <widget class="QLabel" name="label_32">
+                        <property name="text">
+                         <string>Email</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_5"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_41">
+                      <item>
+                       <widget class="QLabel" name="label_33">
+                        <property name="text">
+                         <string>Phone: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_6"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_42">
+                      <item>
+                       <widget class="QLabel" name="label_34">
+                        <property name="text">
+                         <string>Address: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLineEdit" name="lineEdit_7"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_22">
+                      <item>
+                       <widget class="QLabel" name="label_35">
+                        <property name="text">
+                         <string>Type of Hospital</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_43">
+                        <item>
+                         <widget class="QRadioButton" name="radioButton">
+                          <property name="text">
+                           <string>Public</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QRadioButton" name="radioButton_2">
+                          <property name="text">
+                           <string>Private</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_44">
+                      <item>
+                       <widget class="QLabel" name="label_36">
+                        <property name="text">
+                         <string>Number of beds</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSpinBox" name="spinBox"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_45">
+                      <item>
+                       <widget class="QLabel" name="label_37">
+                        <property name="text">
+                         <string>Admited Patients</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSpinBox" name="spinBox_2"/>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_46">
+                      <item>
+                       <widget class="QLabel" name="label_38">
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QComboBox" name="comboBox_2">
+                        <item>
+                         <property name="text">
+                          <string>Cardiology</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Oncology</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Neurology</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Pediatrics</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Obstetrics and Gynecology</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Orthopedics</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Rehabilitation</string>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Psychiatry</string>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QVBoxLayout" name="verticalLayout_25">
+                      <item>
+                       <widget class="QLabel" name="label_39">
+                        <property name="text">
+                         <string>Serivces Provided: </string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_47">
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_2">
+                          <property name="text">
+                           <string>Emergency</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="checkBox">
+                          <property name="text">
+                           <string>Diagnostic</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_48">
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_4">
+                          <property name="text">
+                           <string>Inpatient Units</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_3">
+                          <property name="text">
+                           <string>ICU</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_49">
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_6">
+                          <property name="text">
+                           <string>Mental Health</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_5">
+                          <property name="text">
+                           <string>Outpatient</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_50">
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_8">
+                          <property name="text">
+                           <string>Rehabilitation</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCheckBox" name="checkBox_7">
+                          <property name="text">
+                           <string>Surgical</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_51">
+                      <item>
+                       <widget class="QPushButton" name="pushButton_4">
+                        <property name="text">
+                         <string>Update</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_3">
+                        <property name="text">
+                         <string>Add</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_16">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
                    </property>
                   </widget>
                  </item>
